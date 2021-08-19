@@ -1,0 +1,69 @@
+<!doctype html>
+
+
+<head>
+    <title>Test</title> 
+    <meta charset=utf-8>
+    
+    <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+    .active {
+        background-color: #04AA6D;
+    </style>
+</head>
+<body>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a class="QR_Code" href="templates/QR_Code.html">QR Code</a></li>
+    </ul>
+
+    <form action='QR_Code' method='POST'>
+        <div class = 'form-group'>
+            <label for="QR"> Create QR Code from URL</label>
+            <input name="Image_Number">
+            <input type="submit">
+        </div>
+    </form>
+
+    <div class='container'>
+        <form action = 'JSONUpload' method = 'POST' enctype = 'multipart/form-data'>
+            <div class = 'form-group'>
+                <label for="inputFile"> Create QR Code from JSON</label>
+                <input type='file' name="inputFile">
+                <button type="submit" class="btn btn-default">Upload</button>
+            </div>
+        </form>
+    </div>
+
+    <button> <a href="/ShowQRCode/">Click to show QR Code</a></button>
+
+    <form action='retrieve' method='POST'>
+        <div class = 'form-group'>
+            <label for="Image_Number"> Retrieve</label>
+            <input name="Image_Number">
+            <input type="submit">
+        </div>
+    </form>
+</body>
